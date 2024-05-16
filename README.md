@@ -42,3 +42,7 @@ export default [
 # 6.VSCode常用插件
 
 Vue 3 Snippets
+
+# css 暂定
+package.json
+"swiper": "10.3.1",

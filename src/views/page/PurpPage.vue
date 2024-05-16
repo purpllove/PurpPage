@@ -2,27 +2,21 @@
 import { ref } from "vue";
 import { getAllPage } from "../../service/api";
 import { TechnologyCard } from "./components";
-// import {
-//   NCollapse,
-//   NCollapseItem,
-//   NGrid,
-//   NGridItem,
-//   NSpace,
-//   NCard,
-// } from "naive-ui";
-// defineProps<{ msg: string }>();
 defineOptions({ name: "PurpPage" });
 const smallLogy = ref<ApiPageManagement.Page[]>([]);
 const groupLogy = ref<number[]>([]);
 async function getHomePages() {
   const { data } = await getAllPage();
-  // dataPage.value = await getPages();
   if (data) {
     setTimeout(() => {
       smallLogy.value = data.data.list;
       groupLogy.value = data.data.types;
     }, 1000);
   }
+}
+
+function login(){
+  window.open('/HelloWorld', '_blank');
 }
 
 function init() {
@@ -43,6 +37,7 @@ init();
         </n-grid>
       </n-card>
     </n-space> -->
+    <n-button @click="login" class="justify-end" href="https://github.com/vuejs/language-tools" target="_blank">登录</n-button>
     <n-collapse v-for="itemGroup in groupLogy" :key="itemGroup" :vertical="true" :size="16" arrow-placement="right"
       :default-expanded-names="String(groupLogy[0])" :accordion=true>
       <n-collapse-item :title="String(itemGroup)" :bordered="false" size="small" class="rounded-8px shadow-sm"
