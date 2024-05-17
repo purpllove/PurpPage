@@ -15,7 +15,9 @@ async function getHomePages() {
   }
 }
 
-
+function login() {
+  window.open("/login", "_blank");
+}
 
 function init() {
   getHomePages();
@@ -35,9 +37,9 @@ init();
         </n-grid>
       </n-card>
     </n-space> -->
-   
+    <n-button @click="login" class="justify-end" target="_blank">登录</n-button>
     <n-collapse v-for="itemGroup in groupLogy" :key="itemGroup" :vertical="true" :size="16" arrow-placement="right"
-      :default-expanded-names="String(groupLogy[0])" :accordion=true>
+      :default-expanded-names="String(groupLogy[0])" :accordion="true">
       <n-collapse-item :title="String(itemGroup)" :bordered="false" size="small" class="rounded-8px shadow-sm"
         :name="String(itemGroup)">
         <n-grid :item-responsive="true" responsive="screen" cols="m:2 l:6" :x-gap="8" :y-gap="8">

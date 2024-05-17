@@ -7,9 +7,17 @@ import {
 } from "vue-router";
 
 import HelloWorldView from ".././components/HelloWorld.vue";
+import PurpPageView from ".././views/page/PurpPage.vue";
 import TestView from "@/views/management/Test.vue";
+import FormView from ".././views/login/form.vue";
+// import IndexView from ".././views/login/index.vue";
 
 const routes = [
+    {
+        path: "/purpPage",
+        name: "purpPage",
+        component: PurpPageView,
+    },
     {
         path: "/helloWorld",
         name: "helloWorld",
@@ -20,6 +28,16 @@ const routes = [
         name: "test",
         component: TestView,
     },
+    {
+        path: "/login",
+        name: "login",
+        component: FormView,
+    },
+    // {
+    //     path: "/index",
+    //     name: "index",
+    //     component: IndexView,
+    // },
 ];
 
 const router = createRouter({
