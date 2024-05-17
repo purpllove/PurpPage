@@ -41,7 +41,9 @@ export default [
 
 # 6.VSCode常用插件
 
-Vue 3 Snippets
+6.1 Vue 3 Snippets
+6.2 别名路径跳转
+
 
 # css 暂定
 package.json

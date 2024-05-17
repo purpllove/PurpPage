@@ -7,12 +7,15 @@
         <n-button @click="cc()">
           切换模式
         </n-button>
-        <purp-page />
+        <n-button @click="login" class="justify-end" target="_blank">登录</n-button>
+        <RouterLink to="/helloWorld">Go HelloWorld</RouterLink>
+        <RouterLink to="/test">Go to Home</RouterLink>
+        <!-- <purp-page /> -->
       </n-space>
     </n-card>
       <!-- 主题颜色编辑器 -->
       <!-- <n-theme-editor/> -->
-      
+      <RouterView />
 
     </n-config-provider>
   </div>
@@ -24,20 +27,19 @@
 import PurpPage from "./views/page/PurpPage.vue";
 import { ref } from 'vue'
 import { dateZhCN, zhCN } from 'naive-ui';
-import { NThemeEditor } from 'naive-ui'
+// import { NThemeEditor } from 'naive-ui'
 import "./common/css/app.css";
 import { darkTheme } from 'naive-ui'
 import type { GlobalTheme } from 'naive-ui'
 const theme = ref<GlobalTheme | null>(null);
 const isDark = ref<boolean>(true);
 function cc(){
-  if(isDark.value){
-    theme.value = darkTheme;
-    isDark.value = false;
-  }else{
-    theme.value = null;
-    isDark.value = true;
-  }
+  const darkBool = isDark.value;
+  theme.value = darkBool ? darkTheme : null;
+  isDark.value = !darkBool;
+}
+function login(){
+  window.open('/helloWorld', '_blank');
 }
 </script>
 

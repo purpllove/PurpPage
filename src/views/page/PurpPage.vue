@@ -15,9 +15,7 @@ async function getHomePages() {
   }
 }
 
-function login(){
-  window.open('/HelloWorld', '_blank');
-}
+
 
 function init() {
   getHomePages();
@@ -37,7 +35,7 @@ init();
         </n-grid>
       </n-card>
     </n-space> -->
-    <n-button @click="login" class="justify-end" href="https://github.com/vuejs/language-tools" target="_blank">登录</n-button>
+   
     <n-collapse v-for="itemGroup in groupLogy" :key="itemGroup" :vertical="true" :size="16" arrow-placement="right"
       :default-expanded-names="String(groupLogy[0])" :accordion=true>
       <n-collapse-item :title="String(itemGroup)" :bordered="false" size="small" class="rounded-8px shadow-sm"
