@@ -6,10 +6,12 @@ import {
     createWebHistory,
 } from "vue-router";
 
-import HelloWorldView from ".././components/HelloWorld.vue";
-import PurpPageView from ".././views/page/PurpPage.vue";
-import TestView from "@/views/management/Test.vue";
-import FormView from ".././views/login/form.vue";
+import HelloWorldView from "../components/HelloWorld.vue";
+import LayoutView from "../components/layout/layout.vue";
+import PurpPageView from "../views/page/purpPage.vue";
+import TestView from "../views/management/Test.vue";
+import FormView from "../views/login/form.vue";
+import PageSettingView from "../views/management/pageSetting/index.vue";
 // import IndexView from ".././views/login/index.vue";
 
 const routes = [
@@ -38,6 +40,16 @@ const routes = [
     //     name: "index",
     //     component: IndexView,
     // },
+    {
+        path: "/layout",
+        name: "layout",
+        component: LayoutView,
+    },
+    {
+        path: "/management/pageSetting",
+        name: "pageSetting",
+        component: PageSettingView,
+    },
 ];
 
 const router = createRouter({

@@ -103,14 +103,13 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {
   ref,
   reactive,
   onMounted,
   onBeforeUnmount,
   nextTick,
-  defineEmits,
 } from "vue";
 import { useRoute } from "vue-router";
 import {
@@ -181,6 +180,9 @@ function showPwd() {
   });
 }
 function handleLogin() {
+  window.open("/management/pageSetting", "_blank");
+  return true;
+  // 下面才是正常代码 现阶段直接跳过
   loginFormRef.value.validate((valid) => {
     if (valid) {
       const form = loginForm.value;

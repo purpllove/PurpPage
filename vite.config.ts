@@ -6,7 +6,10 @@ import progress from 'vite-plugin-progress';
 import VueDevtools from 'vite-plugin-vue-devtools';
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
+import Icons from 'unplugin-icons/vite';
+import IconsResolver from 'unplugin-icons/resolver';
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
+import { FileSystemIconLoader } from 'unplugin-icons/loaders';
 import path from "path";
 import { URL, fileURLToPath } from 'node:url';
 
@@ -37,10 +40,23 @@ export default defineConfig({
         }
       ]
     }),
+    Icons({
+      compiler: 'vue3',
+      customCollections: {
+        ['']: FileSystemIconLoader('src/assets/svg-icon', svg =>
+          svg.replace(/^<svg\s/, '<svg width="1em" height="1em" ')
+        )
+      },
+      scale: 1,
+      defaultClass: 'inline-block'
+    }),
     Components({
       dts: 'src/types/components.d.ts',
       types: [{ from: 'vue-router', names: ['RouterLink', 'RouterView'] }],
-      resolvers: [NaiveUiResolver()]
+      resolvers: [
+        NaiveUiResolver(),
+        IconsResolver({ customCollections: [''], componentPrefix: 'icon' })
+      ]
     }),
     unocss(),
     progress(),

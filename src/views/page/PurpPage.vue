@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import { getAllPage } from "../../service/api";
 import { TechnologyCard } from "./components";
-defineOptions({ name: "PurpPage" });
+defineOptions({ name: "purpPage" });
 const smallLogy = ref<ApiPageManagement.Page[]>([]);
 const groupLogy = ref<number[]>([]);
 async function getHomePages() {
