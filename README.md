@@ -48,3 +48,12 @@ export default [
 # css 暂定
 package.json
 "swiper": "10.3.1",
+
+
+# 启动
+pnpm build --未build,启动前执行
+pnpm dev
+# 主页
+http://localhost:9980/purpPage
+# 静态路由配置
+src\router\index.ts

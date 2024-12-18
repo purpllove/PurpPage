@@ -26,7 +26,7 @@ function init() {
 init();
 </script>
 <template>
-  <div>
+  <!-- <div> -->
     <!-- <n-space v-for="itemGroup in groupLogy" :key="itemGroup" :vertical="true" :size="16">
       <n-card :title="itemGroup + ''" :bordered="false" size="small" class="rounded-8px shadow-sm">
         <n-grid :item-responsive="true" responsive="screen" cols="m:2 l:6" :x-gap="8" :y-gap="8">
@@ -50,5 +50,5 @@ init();
         </n-grid>
       </n-collapse-item>
     </n-collapse>
-  </div>
+  <!-- </div> -->
 </template>

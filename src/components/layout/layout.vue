@@ -1,16 +1,17 @@
 <template>
     <n-space vertical>
-        <n-space> <n-switch v-model:value="inverted" /> inverted 
-            <n-button @click="login" class="justify-end" target="_blank">登录</n-button>
-        </n-space>
+        <!-- <n-space>
+            <n-switch v-model:value="inverted" /> inverted 
+            
+        </n-space> -->
         <n-layout>
             <n-layout-header :inverted="inverted" bordered>
                 Header
                 <!-- <n-menu mode="horizontal" :inverted="inverted" :options="menuOptions" /> -->
+                <n-button @click="login" class="justify-end" target="_blank">登录</n-button>
             </n-layout-header>
             <n-layout has-sider>
-                <n-layout-sider bordered show-trigger collapse-mode="width" :collapsed-width="64" :width="120"
-                    :native-scrollbar="false" :inverted="inverted" style="max-height: 320px">
+                <n-layout-sider bordered show-trigger collapse-mode="width" :collapsed-width="64" :width="120" :native-scrollbar="false" :inverted="inverted">
                     <n-menu :inverted="inverted" :collapsed-width="64" :collapsed-icon-size="22" :options="groupOption"
                         key-field="key" label-field="label" @update:value="handleMenuUpdate" />
                 </n-layout-sider>
